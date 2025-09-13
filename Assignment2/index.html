@@ -33,33 +33,90 @@
     <main>
       <section>
         <div id="infoPara"></div>
-        <h3>interesting websites</h3>
+        <h2>inspiration</h2>
         <nav><a href="https://patatap.com/">patatap</a></nav>
         <nav><a href="https://aidn.jp/mikutap/">mikutap</a></nav>
+        <section>
+          <p>
+            These two websites are quite similar. The idea of these two websites
+            is clicking on different parts of the screen will produce different
+            sound and different animations, which provides quite engaging
+            experience.
+          </p>
+        </section>
 
         <section>
           <h2>Conceptual response</h2>
-          <h3></h3>
-          <img src="assets/visual map1.jpg" alt="visual map1" />
-          <img src="assets/visual map2.jpg" alt="visual map2" />
-          <img src="assets/visual map3.jpg" alt="visual map3" />
+          <p>
+            My concept is a website that changes based on the mouse click
+            coordinates of the user, generating some random sounds and ripples.
+            The x-axis represents the pitch variation, the y-axis represents the
+            filter change, and the generated sound waveforms on the website are
+            random. The website needs to have a pause button, a reset button and
+            a volume slider.
+          </p>
+          <div id="visualMap">
+            <img src="assets/visual map1.jpg" alt="visual map1" />
+            <img src="assets/visual map2.jpg" alt="visual map2" />
+            <img src="assets/visual map3.jpg" alt="visual map3" />
+          </div>
         </section>
 
         <section>
           <h2>Implementation and system map</h2>
-          <img src="assets/system map.drawio.png" alt="xypad system map" />
-          <h3></h3>
+          <div id="systemMap">
+            <p>
+              the technique I chose is using addeventlistener to trigger mouse
+              action. Create a pad of the same size as the window to monitor the
+              x and y coordinates of the mouse. Use Math.random() to select a
+              random wavetype. Every time the mouse is clicked, a new oscillator
+              is created and connected to a new filter. Their values are
+              determined by the mouse position, by calculating the ratio of the
+              coordinates to the window size and then multiplying it by the
+              maximum value. This gives a value specific to this coordinate. Use
+              setValueAtTime(value, starttime) to monitor the current mouse
+              value, and update the corresponding value each time the mouse
+              moves, achieving the effect of dragging and sound variation. To
+              achieve the fade-out effect of the sound,
+              exponentialRampToValueAtTime(value, endtime) is used. And stop()
+              is used to set the duration of the sound extension.
+            </p>
+            <img src="assets/xypad system map.jpg" alt="xypad system map" />
+            <p>
+              e.stopPropagation() prevents the area at the bottom of the button
+              from triggering the sound. The setting of the "pause button" is as
+              follows: when the mouse is clicked, it checks whether the
+              audioContext is running. If it is running, it switches the play
+              icon to the pause icon, then suspend it; if it is paused, it
+              switches the pause icon to the play icon, then re-open it. The
+              setting for the "reset button" is as follows: After clicking with
+              the mouse, it closes the currently running audioContext, then
+              creates a brand new one and resets the volume to the default
+              level. The "volume slider" links the current value clicked by the
+              mouse with the volume.
+            </p>
+            <img
+              src="assets/UIsetting system map.jpg"
+              alt="UIsetting system map"
+            />
+          </div>
         </section>
+
+        <div>
+          <h2>Feedback setting</h2>
+          <p>
+            Inverting the image of buttons while clicking on the button. For the
+            red dot, it changes into a slightly deeper red while clicking and
+            dragging
+          </p>
+        </div>
 
         <section>
           <h2>reflection on peer user testing</h2>
           <h3>
             <ol>
               <li>Does click,drag and the sound provide enough feedback?</li>
-              <li>
-                Do the buttons and instruction clear enough for understanding
-                the function?
-              </li>
+              <li>Do the sound create a comfortable or engaging experience?</li>
             </ol>
           </h3>
         </section>
