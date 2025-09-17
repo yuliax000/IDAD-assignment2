@@ -49,11 +49,14 @@
           <h2>Conceptual response</h2>
           <p>
             My concept is a website that changes based on the mouse click
-            coordinates of the user, generating some random sounds and ripples.
-            The x-axis represents the pitch variation, the y-axis represents the
-            filter change, and the generated sound waveforms on the website are
-            random. The website needs to have a pause button, a reset button and
-            a volume slider.
+            coordinates of the user, generating some random sounds and ripples
+            or colorful circles. This website aims to create an engaging
+            interactive experience by integrating user actions, visuals and
+            auditory elements. The x-axis represents the pitch variation, the
+            y-axis represents the filter change, and the generated sound
+            waveforms on the website are random (the visual part must be random
+            as well). The website needs to have a pause button to stop the sound
+            for a while, a button to reset all the settings and a volume slider.
           </p>
           <div id="visualMap">
             <img src="assets/visual map1.jpg" alt="visual map1" />
@@ -72,12 +75,11 @@
               random wavetype. Every time the mouse is clicked, a new oscillator
               is created and connected to a new filter. Their values are
               determined by the mouse position, by calculating the ratio of the
-              coordinates to the window size and then multiplying it by the
-              maximum value. This gives a value specific to this coordinate. Use
-              setValueAtTime(value, starttime) to monitor the current mouse
-              value, and update the corresponding value each time the mouse
-              moves, achieving the effect of dragging and sound variation. To
-              achieve the fade-out effect of the sound,
+              coordinates to the window size. This gives a value specific to
+              this coordinate. Use setValueAtTime(value, starttime) to monitor
+              the current mouse value, and update the corresponding value each
+              time the mouse moves, achieving the effect of dragging and sound
+              variation. To achieve the fade-out effect of the sound,
               exponentialRampToValueAtTime(value, endtime) is used. And stop()
               is used to set the duration of the sound extension.
             </p>
@@ -105,9 +107,9 @@
         <div>
           <h2>Feedback setting</h2>
           <p>
-            Inverting the image of buttons while clicking on the button. For the
-            red dot, it changes into a slightly deeper red while clicking and
-            dragging
+            I tried to enhance the interactive feedback. Inverting the image of
+            buttons while clicking on the button. For the red dot, it changes
+            into a slightly deeper red while clicking and dragging
           </p>
         </div>
 
@@ -116,7 +118,31 @@
           <h3>
             <ol>
               <li>Does click,drag and the sound provide enough feedback?</li>
+              <p>
+                Most users'feedback are saying it provides great feedback. Some
+                mention that it lacks visual feedback at this stage, especially
+                the red dot.I will think about how to add more diverse
+                variations to the red dot. Some feedback mention that it would
+                be great with ripples as visual feedback, so considering the
+                visual style of ripples is necessary. It is worth noting that
+                since no specific ripple appears on the screen, each person's
+                imagined ripple may be different. There has not been sufficient
+                feedback in this regard. Next time doing prototype, some visual
+                demonstrations need to be added to the prototype.
+              </p>
+
               <li>Do the sound create a comfortable or engaging experience?</li>
+              <p>
+                some feedback suggest that The tone is too sharp and the sound
+                doesn't match the expectation for "ripple". I'm considering
+                change the tone of the sound, especially the dragging
+                sound(someone says it reminds them of a mosquito but I don't
+                want that.). Although one of the feedback says that it provides
+                surprise and delight, I want to keep the sound and the visual
+                effects stay cohensive. I feel like the tone does provide some
+                fun part to this project, but there's quite big differece
+                between clicking sound and dragging sound.
+              </p>
             </ol>
           </h3>
         </section>
